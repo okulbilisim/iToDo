@@ -1,5 +1,5 @@
 //
-//  ToDoViewController.h
+//  ToDoTableViewController.h
 //  iToDo
 //
 //  Created by Bilal ARSLAN on 05/07/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ToDoViewController : UIViewController
+@interface ToDoTableViewController : UITableViewController
 
 @end
