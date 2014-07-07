@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		770B8EBE196AD076008207B5 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 770B8EBD196AD076008207B5 /* DBManager.m */; };
+		770B8EC0196AD250008207B5 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 770B8EBF196AD250008207B5 /* libsqlite3.dylib */; };
+		770B8EC3196AD539008207B5 /* AddToDoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 770B8EC2196AD539008207B5 /* AddToDoViewController.m */; };
 		778FA8E81968219A008B3664 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 778FA8E71968219A008B3664 /* Foundation.framework */; };
 		778FA8EA1968219A008B3664 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 778FA8E91968219A008B3664 /* CoreGraphics.framework */; };
 		778FA8EC1968219A008B3664 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 778FA8EB1968219A008B3664 /* UIKit.framework */; };
@@ -14,13 +17,13 @@
 		778FA8F41968219A008B3664 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 778FA8F31968219A008B3664 /* main.m */; };
 		778FA8F81968219A008B3664 /* ToDoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 778FA8F71968219A008B3664 /* ToDoAppDelegate.m */; };
 		778FA8FB1968219A008B3664 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 778FA8F91968219A008B3664 /* Main.storyboard */; };
-		778FA8FE1968219A008B3664 /* ToDoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 778FA8FD1968219A008B3664 /* ToDoViewController.m */; };
 		778FA9001968219A008B3664 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 778FA8FF1968219A008B3664 /* Images.xcassets */; };
 		778FA9071968219A008B3664 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 778FA9061968219A008B3664 /* XCTest.framework */; };
 		778FA9081968219A008B3664 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 778FA8E71968219A008B3664 /* Foundation.framework */; };
 		778FA9091968219A008B3664 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 778FA8EB1968219A008B3664 /* UIKit.framework */; };
 		778FA9111968219A008B3664 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 778FA90F1968219A008B3664 /* InfoPlist.strings */; };
 		778FA9131968219A008B3664 /* iToDoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 778FA9121968219A008B3664 /* iToDoTests.m */; };
+		778FA91E196822F3008B3664 /* ToDoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 778FA91D196822F3008B3664 /* ToDoTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		770B8EBC196AD076008207B5 /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
+		770B8EBD196AD076008207B5 /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
+		770B8EBF196AD250008207B5 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		770B8EC1196AD539008207B5 /* AddToDoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddToDoViewController.h; sourceTree = "<group>"; };
+		770B8EC2196AD539008207B5 /* AddToDoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddToDoViewController.m; sourceTree = "<group>"; };
 		778FA8E41968219A008B3664 /* iToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		778FA8E71968219A008B3664 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		778FA8E91968219A008B3664 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -45,14 +53,14 @@
 		778FA8F61968219A008B3664 /* ToDoAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToDoAppDelegate.h; sourceTree = "<group>"; };
 		778FA8F71968219A008B3664 /* ToDoAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToDoAppDelegate.m; sourceTree = "<group>"; };
 		778FA8FA1968219A008B3664 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		778FA8FC1968219A008B3664 /* ToDoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToDoViewController.h; sourceTree = "<group>"; };
-		778FA8FD1968219A008B3664 /* ToDoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToDoViewController.m; sourceTree = "<group>"; };
 		778FA8FF1968219A008B3664 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		778FA9051968219A008B3664 /* iToDoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iToDoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		778FA9061968219A008B3664 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		778FA90E1968219A008B3664 /* iToDoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iToDoTests-Info.plist"; sourceTree = "<group>"; };
 		778FA9101968219A008B3664 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		778FA9121968219A008B3664 /* iToDoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iToDoTests.m; sourceTree = "<group>"; };
+		778FA91C196822F3008B3664 /* ToDoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoTableViewController.h; sourceTree = "<group>"; };
+		778FA91D196822F3008B3664 /* ToDoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				770B8EC0196AD250008207B5 /* libsqlite3.dylib in Frameworks */,
 				778FA8EA1968219A008B3664 /* CoreGraphics.framework in Frameworks */,
 				778FA8EC1968219A008B3664 /* UIKit.framework in Frameworks */,
 				778FA8E81968219A008B3664 /* Foundation.framework in Frameworks */,
@@ -79,6 +88,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		770B8EBB196AD061008207B5 /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				770B8EBC196AD076008207B5 /* DBManager.h */,
+				770B8EBD196AD076008207B5 /* DBManager.m */,
+			);
+			name = DataBase;
+			sourceTree = "<group>";
+		};
 		778FA8DB1968219A008B3664 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +119,7 @@
 		778FA8E61968219A008B3664 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				770B8EBF196AD250008207B5 /* libsqlite3.dylib */,
 				778FA8E71968219A008B3664 /* Foundation.framework */,
 				778FA8E91968219A008B3664 /* CoreGraphics.framework */,
 				778FA8EB1968219A008B3664 /* UIKit.framework */,
@@ -112,12 +131,13 @@
 		778FA8ED1968219A008B3664 /* iToDo */ = {
 			isa = PBXGroup;
 			children = (
-				778FA8F61968219A008B3664 /* ToDoAppDelegate.h */,
-				778FA8F71968219A008B3664 /* ToDoAppDelegate.m */,
 				778FA8F91968219A008B3664 /* Main.storyboard */,
-				778FA8FC1968219A008B3664 /* ToDoViewController.h */,
-				778FA8FD1968219A008B3664 /* ToDoViewController.m */,
+				778FA91C196822F3008B3664 /* ToDoTableViewController.h */,
+				778FA91D196822F3008B3664 /* ToDoTableViewController.m */,
+				770B8EC1196AD539008207B5 /* AddToDoViewController.h */,
+				770B8EC2196AD539008207B5 /* AddToDoViewController.m */,
 				778FA8FF1968219A008B3664 /* Images.xcassets */,
+				770B8EBB196AD061008207B5 /* DataBase */,
 				778FA8EE1968219A008B3664 /* Supporting Files */,
 			);
 			path = iToDo;
@@ -126,6 +146,8 @@
 		778FA8EE1968219A008B3664 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				778FA8F61968219A008B3664 /* ToDoAppDelegate.h */,
+				778FA8F71968219A008B3664 /* ToDoAppDelegate.m */,
 				778FA8EF1968219A008B3664 /* iToDo-Info.plist */,
 				778FA8F01968219A008B3664 /* InfoPlist.strings */,
 				778FA8F31968219A008B3664 /* main.m */,
@@ -250,9 +272,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				778FA91E196822F3008B3664 /* ToDoTableViewController.m in Sources */,
 				778FA8F81968219A008B3664 /* ToDoAppDelegate.m in Sources */,
 				778FA8F41968219A008B3664 /* main.m in Sources */,
-				778FA8FE1968219A008B3664 /* ToDoViewController.m in Sources */,
+				770B8EBE196AD076008207B5 /* DBManager.m in Sources */,
+				770B8EC3196AD539008207B5 /* AddToDoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +481,7 @@
 				778FA9181968219A008B3664 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		778FA9191968219A008B3664 /* Build configuration list for PBXNativeTarget "iToDoTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +490,7 @@
 				778FA91B1968219A008B3664 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
