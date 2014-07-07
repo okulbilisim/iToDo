@@ -93,7 +93,7 @@
     
     // Configure the cell...
     cell.textLabel.text = [NSString stringWithFormat:@"%@", [[self.arrTodosInfo objectAtIndex:indexPath.row] objectAtIndex:indexOfTitle]];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"Age: %@", [[self.arrTodosInfo objectAtIndex:indexPath.row] objectAtIndex:indexOfDescription]];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", [[self.arrTodosInfo objectAtIndex:indexPath.row] objectAtIndex:indexOfDescription]];
     
     cell.detailTextLabel.lineBreakMode = NSLineBreakByWordWrapping;
     cell.detailTextLabel.numberOfLines = 2;
