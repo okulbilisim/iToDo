@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AddToDoViewController.h"
 
 @interface ToDoTableViewController : UITableViewController
+<AddToDoViewControllerDelegate>
 
 @end

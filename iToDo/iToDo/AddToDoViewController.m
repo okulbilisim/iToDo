@@ -7,26 +7,23 @@
 //
 
 #import "AddToDoViewController.h"
+#import "DBManager.h"
 
 @interface AddToDoViewController ()
+
+@property (nonatomic, strong) DBManager *dbManager;
 
 @end
 
 @implementation AddToDoViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.txtTitle.delegate = self;
+    self.txtDesc.delegate = self;
+    
+    self.dbManager = [[DBManager alloc] initWithDatabaseFileName:@"iToDoDb.sql"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,17 +32,61 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+#pragma mark - Keyboard Methods
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    [textField resignFirstResponder];
+    return YES;
 }
-*/
 
-- (IBAction)SaveToDo:(id)sender {
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+    NSRange resultRange = [text rangeOfCharacterFromSet:[NSCharacterSet newlineCharacterSet] options:NSBackwardsSearch];
+    
+    if ([text length] == 1 && resultRange.location != NSNotFound) {
+        [textView resignFirstResponder];
+        return NO;
+    }
+    return YES;
 }
+
+#pragma mark - Save Button
+- (IBAction)SaveToDo:(id)sender
+{
+    //  Dismissing Keyboard
+    [self.txtDesc resignFirstResponder];
+    [self.txtTitle resignFirstResponder];
+    
+    
+    //  Warning if title field is emtpy.
+    if ([self.txtTitle.text isEqualToString:@""] || [self.txtTitle.text isEqual:nil]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"Fill the Title" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+        return;
+    }
+    
+    //  Prepare the query string.
+    NSString *query = [NSString stringWithFormat:@"insert into todoInfo values(null, '%@', '%@')", self.txtTitle.text, self.txtDesc.text];
+    NSLog(@"The query is: %@", query);
+    
+    //  Execute the query.
+    [self.dbManager executeQuery:query];
+    
+    //  If query was succesfully executed then pop the view controller.
+    if (self.dbManager.affectedRows != 0)
+    {
+        NSLog(@"Query was executed succesfully. Affected rows = %d", self.dbManager.affectedRows);
+    
+        //  Inform the delegate that editing was finished.
+        [self.delegate editingInfoWasFinished];
+        
+        //  Pop the view controller
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    else
+    {
+        NSLog(@"Could not ecexute the query");
+    }
+}
+
 @end

@@ -8,9 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AddToDoViewController : UIViewController
+@protocol AddToDoViewControllerDelegate
+@required
+-(void)editingInfoWasFinished;
+@end
+
+
+@interface AddToDoViewController : UIViewController <UITextFieldDelegate, UITextViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UITextField *txtTitle;
 @property (weak, nonatomic) IBOutlet UITextView *txtDesc;
+@property (nonatomic, strong) id<AddToDoViewControllerDelegate> delegate;
 
 - (IBAction)SaveToDo:(id)sender;
 

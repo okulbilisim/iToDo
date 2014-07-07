@@ -13,7 +13,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="mHm-Gx-Moh" detailTextLabel="yER-dN-CJF" rowHeight="85" style="IBUITableViewCellStyleSubtitle" id="Ly7-Aq-nWq">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="todoCell" textLabel="mHm-Gx-Moh" detailTextLabel="yER-dN-CJF" rowHeight="85" style="IBUITableViewCellStyleSubtitle" id="Ly7-Aq-nWq">
                                 <rect key="frame" x="0.0" y="86" width="320" height="85"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ly7-Aq-nWq" id="rCf-TW-bTT">
@@ -46,7 +46,7 @@
                     <navigationItem key="navigationItem" title="iToDo" id="X2F-P1-Wab">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="CXC-pv-fCU">
                             <connections>
-                                <segue destination="ecN-1t-Lxc" kind="push" id="Muj-YE-Yrk"/>
+                                <segue destination="ecN-1t-Lxc" kind="push" identifier="addSegue" id="Muj-YE-Yrk"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -84,14 +84,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.93883529970000001" green="0.90538717980000005" blue="0.77801976289999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Insert your iToDo Description here.." translatesAutoresizingMaskIntoConstraints="NO" id="j12-hY-Dea">
                                 <rect key="frame" x="20" y="220" width="280" height="127"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.93883529970000001" green="0.90538717980000005" blue="0.77801976289999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.90836256380000002" green="0.6494116379" blue="0.41180104989999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -110,7 +110,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ipN-yl-DvL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="546" y="51"/>
+            <point key="canvasLocation" x="540" y="51"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TZE-Ih-Ftf">
