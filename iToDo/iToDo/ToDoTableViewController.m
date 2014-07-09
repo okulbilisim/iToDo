@@ -13,6 +13,7 @@
 
 @property (nonatomic, strong) DBManager *dbManager;
 @property (nonatomic, strong) NSArray *arrTodosInfo;
+@property (nonatomic) int recordIDToEdit;
 
 -(void) loadData;
 
@@ -38,11 +39,21 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)addToDo:(id)sender
+{
+    // Before performing the segue, set the -1 value to the recordIDToEdit. That way we'll indicate that we want to add a new record and not to edit an existing one.
+    self.recordIDToEdit = -1;
+    
+    [self performSegueWithIdentifier:@"idSegue" sender:self];
+    
+}
+
 #pragma mark - Segue for reload data
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     AddToDoViewController *addToDoVC = [segue destinationViewController];
     addToDoVC.delegate = self;
+    addToDoVC.recordIDToEdit = self.recordIDToEdit;
 }
 
 #pragma mark - Load data from DataBase
@@ -103,6 +114,7 @@
     return cell;
 }
 
+// When delete a row on the list. Also delete from database.
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
@@ -121,5 +133,16 @@
         [self loadData];
     }
 }
+
+-(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    //  Get the record ID of the selected name and set it to the recordIDToEdit.
+    self.recordIDToEdit = [[[self.arrTodosInfo objectAtIndex:indexPath.row] objectAtIndex:0] intValue];
+    
+    //Perform the Segue
+    [self performSegueWithIdentifier:@"idSegue" sender:self];
+}
+
+
 
 @end
