@@ -1,7 +1,7 @@
 iTodoSqlite
 ===========
 
-a todo iOS application with Sqlite backend. This project include insert a todo and delete a todo.
+a todo iOS application with Sqlite backend. This project include select, insert, edit and delete a todo.
 
 This project aldo include basic DBManager sqlite class. This class is usable for any project. Class is flexiable and powerful.
 
