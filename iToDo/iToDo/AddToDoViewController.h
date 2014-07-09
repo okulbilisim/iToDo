@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *txtTitle;
 @property (weak, nonatomic) IBOutlet UITextView *txtDesc;
 @property (nonatomic, strong) id<AddToDoViewControllerDelegate> delegate;
+@property (nonatomic) int recordIDToEdit;
 
 - (IBAction)SaveToDo:(id)sender;
 

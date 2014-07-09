@@ -12,4 +12,6 @@
 @interface ToDoTableViewController : UITableViewController
 <AddToDoViewControllerDelegate>
 
+- (IBAction)addToDo:(id)sender;
+
 @end
