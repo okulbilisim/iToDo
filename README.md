@@ -9,7 +9,5 @@ This project aldo include basic DBManager sqlite class. This class is usable for
 <img src="https://github.com/ArslanBilal/iToDo/raw/master/iToDo/Images/img2.png" height="590" width="322"><br><br><hr>
 <img src="https://github.com/ArslanBilal/iToDo/raw/master/iToDo/Images/img3.png" height="590" width="322">&nbsp;&nbsp;
 <img src="https://github.com/ArslanBilal/iToDo/raw/master/iToDo/Images/img4.png" height="590" width="322"><br><br><hr>
-<<<<<<< HEAD
 <img src="https://github.com/ArslanBilal/iToDo/raw/master/iToDo/Images/img5.png" height="590" width="322">&nbsp;&nbsp;<hr>
 =======
->>>>>>> FETCH_HEAD
