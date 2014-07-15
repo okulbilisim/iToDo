@@ -12,9 +12,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="xRX-5p-qAu">
+                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="e4X-OZ-0cq" id="Hgx-JT-7R5"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="todoCell" textLabel="mHm-Gx-Moh" detailTextLabel="yER-dN-CJF" rowHeight="85" style="IBUITableViewCellStyleSubtitle" id="Ly7-Aq-nWq">
-                                <rect key="frame" x="0.0" y="86" width="320" height="85"/>
+                                <rect key="frame" x="0.0" y="130" width="320" height="85"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ly7-Aq-nWq" id="rCf-TW-bTT">
                                     <rect key="frame" x="0.0" y="0.0" width="253" height="84"/>
@@ -51,12 +59,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="todoSearchBar" destination="xRX-5p-qAu" id="HDg-ak-noh"/>
                         <segue destination="ecN-1t-Lxc" kind="push" identifier="idSegue" id="Odn-fs-06A"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7hD-27-Q29" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="130" y="51"/>
+            <point key="canvasLocation" x="135" y="-63"/>
         </scene>
         <!--Add To Do View Controller - Add iToDo-->
         <scene sceneID="rll-Cm-bDS">
@@ -77,7 +86,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rsx-PV-Hvz">
-                                <rect key="frame" x="20" y="183" width="107" height="29"/>
+                                <rect key="frame" x="20" y="158" width="107" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <nil key="highlightedColor"/>
@@ -90,7 +99,7 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Insert your iToDo Description here.." translatesAutoresizingMaskIntoConstraints="NO" id="j12-hY-Dea">
-                                <rect key="frame" x="20" y="220" width="280" height="127"/>
+                                <rect key="frame" x="20" y="195" width="280" height="115"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.93883529970000001" green="0.90538717980000005" blue="0.77801976289999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -113,7 +122,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ipN-yl-DvL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="540" y="51"/>
+            <point key="canvasLocation" x="567" y="-63"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TZE-Ih-Ftf">
@@ -128,7 +137,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pN6-Bd-0WS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-285" y="51"/>
+            <point key="canvasLocation" x="-315" y="-63"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
