@@ -10,8 +10,11 @@
 #import "AddToDoViewController.h"
 
 @interface ToDoTableViewController : UITableViewController
-<AddToDoViewControllerDelegate>
+<AddToDoViewControllerDelegate,UISearchBarDelegate>
+
+@property (nonatomic) IBOutlet UISearchBar *todoSearchBar;
 
 - (IBAction)addToDo:(id)sender;
+
 
 @end

@@ -13,7 +13,9 @@
 
 @property (nonatomic, strong) DBManager *dbManager;
 @property (nonatomic, strong) NSArray *arrTodosInfo;
+@property (nonatomic, strong) NSMutableArray *arrSearchTodosInfo;
 @property (nonatomic) int recordIDToEdit;
+@property BOOL isFiltered;
 
 -(void) loadData;
 
@@ -24,6 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.isFiltered = NO;
     
     //  Bacground color with my best color :)
     self.view.backgroundColor = [UIColor colorWithRed:(232.0 / 255.0) green:(166.0 / 255.0) blue:(105.0 / 255.0) alpha:1.0f];
@@ -81,6 +84,7 @@
 
 #pragma mark - Table view data source
 
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
@@ -89,6 +93,11 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    //  Return the number of the filtered items.
+    if (self.isFiltered) {
+        return self.arrSearchTodosInfo.count;
+    }
+    
     // Return the number of rows in the section.
     return self.arrTodosInfo.count;
 }
@@ -102,9 +111,21 @@
     NSInteger indexOfTitle = [self.dbManager.arrColumnNames indexOfObject:@"title"];
     NSInteger indexOfDescription = [self.dbManager.arrColumnNames indexOfObject:@"description"];
     
-    // Configure the cell...
-    cell.textLabel.text = [NSString stringWithFormat:@"%@", [[self.arrTodosInfo objectAtIndex:indexPath.row] objectAtIndex:indexOfTitle]];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", [[self.arrTodosInfo objectAtIndex:indexPath.row] objectAtIndex:indexOfDescription]];
+    
+    if(!self.isFiltered)
+    {
+        // Configure the cell...
+        cell.textLabel.text = [NSString stringWithFormat:@"%@", [[self.arrTodosInfo objectAtIndex:indexPath.row] objectAtIndex:indexOfTitle]];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", [[self.arrTodosInfo objectAtIndex:indexPath.row] objectAtIndex:indexOfDescription]];
+    }
+    else
+    {
+        //  Configue the cell with filtered results.
+        cell.textLabel.text = [NSString stringWithFormat:@"%@", [[self.arrSearchTodosInfo objectAtIndex:indexPath.row] objectForKey:@"title"]];
+        
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", [[self.arrSearchTodosInfo objectAtIndex:indexPath.row] objectForKey:@"description"]];
+        
+    }
     
     cell.detailTextLabel.lineBreakMode = NSLineBreakByWordWrapping;
     cell.detailTextLabel.numberOfLines = 2;
@@ -143,6 +164,37 @@
     [self performSegueWithIdentifier:@"idSegue" sender:self];
 }
 
-
+#pragma mark - searchBar Methods
+-(void)searchBar:(UISearchBar*)searchBar textDidChange:(NSString*)text
+{
+    if(text.length == 0)
+    {
+        self.isFiltered = NO;
+    }
+    else
+    {
+        NSInteger indexOfTitle = [self.dbManager.arrColumnNames indexOfObject:@"title"];
+        NSInteger indexOfDescription = [self.dbManager.arrColumnNames indexOfObject:@"description"];
+        
+        self.isFiltered = YES;
+        self.arrSearchTodosInfo = [[NSMutableArray alloc] init];
+        
+        for (int i = 0; i<self.arrTodosInfo.count; i++)
+        {
+            NSRange rangeTodoTitle = [[[self.arrTodosInfo objectAtIndex:i] objectAtIndex:indexOfTitle] rangeOfString:text options:NSCaseInsensitiveSearch];
+            NSRange rangeTodoDesc = [[[self.arrTodosInfo objectAtIndex:i] objectAtIndex:indexOfDescription] rangeOfString:text options:NSCaseInsensitiveSearch];
+            
+            if (rangeTodoTitle.location != NSNotFound || rangeTodoDesc.location != NSNotFound)
+            {
+                [self.arrSearchTodosInfo addObject:
+                        @{@"title":[[self.arrTodosInfo objectAtIndex:i] objectAtIndex:indexOfTitle] ,
+                        @"description":[[self.arrTodosInfo objectAtIndex:i] objectAtIndex:indexOfDescription]}];
+            }
+            
+        }
+    }
+    
+    [self.tableView reloadData];
+}
 
 @end

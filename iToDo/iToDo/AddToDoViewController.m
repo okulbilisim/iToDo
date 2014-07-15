@@ -106,8 +106,10 @@
     //  If query was succesfully executed then pop the view controller.
     if (self.dbManager.affectedRows != 0)
     {
+    NSLog(@"-----------------------------------------------------------------------------------------");
         NSLog(@"Query was executed succesfully. Affected rows = %d", self.dbManager.affectedRows);
-    
+    NSLog(@"-----------------------------------------------------------------------------------------");
+        
         //  Inform the delegate that editing was finished.
         [self.delegate editingInfoWasFinished];
         
