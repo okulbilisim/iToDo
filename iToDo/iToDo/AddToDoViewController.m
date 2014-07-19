@@ -58,6 +58,11 @@
     return YES;
 }
 
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.view endEditing:YES];
+}
+
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
     NSRange resultRange = [text rangeOfCharacterFromSet:[NSCharacterSet newlineCharacterSet] options:NSBackwardsSearch];
@@ -108,6 +113,7 @@
     {
     NSLog(@"-----------------------------------------------------------------------------------------");
         NSLog(@"Query was executed succesfully. Affected rows = %d", self.dbManager.affectedRows);
+        NSLog(@"Added Todo Name: %@", self.txtTitle.text);
     NSLog(@"-----------------------------------------------------------------------------------------");
         
         //  Inform the delegate that editing was finished.
