@@ -17,16 +17,14 @@ It's just like that. Very simple to use your project.
 
 
 <hr>
-<img src="https://github.com/ArslanBilal/iToDo/raw/master/iToDo/Images/img1.png" height="590" width="322">&nbsp;&nbsp;
-<img src="https://github.com/ArslanBilal/iToDo/raw/master/iToDo/Images/img2.png" height="590" width="322"><br>
+<img src="https://github.com/ArslanBilal/iToDo/raw/master/iToDo/Images/img1.png" height="295" width="161">&nbsp;&nbsp;
+<img src="https://github.com/ArslanBilal/iToDo/raw/master/iToDo/Images/img2.png" height="295" width="161">&nbsp;&nbsp;
+<img src="https://github.com/ArslanBilal/iToDo/raw/master/iToDo/Images/img3.png" height="295" width="161">&nbsp;&nbsp;
+<img src="https://github.com/ArslanBilal/iToDo/raw/master/iToDo/Images/img4.png" height="295" width="161"><br>
 <hr>
-<img src="https://github.com/ArslanBilal/iToDo/raw/master/iToDo/Images/img3.png" height="590" width="322">&nbsp;&nbsp;
-<img src="https://github.com/ArslanBilal/iToDo/raw/master/iToDo/Images/img4.png" height="590" width="322"><br>
-<hr>
-<img src="https://github.com/ArslanBilal/iToDo/raw/master/iToDo/Images/img5.png" height="590" width="322">&nbsp;&nbsp;
-<img src="https://github.com/ArslanBilal/iToDo/raw/master/iToDo/Images/img6.png" height="590" width="322"><br>
-<hr>
-<img src="https://github.com/ArslanBilal/iToDo/raw/master/iToDo/Images/img7.png" height="590" width="322">&nbsp;&nbsp;
-<img src="https://github.com/ArslanBilal/iToDo/raw/master/iToDo/Images/img8.png" height="590" width="322"><br>
+<img src="https://github.com/ArslanBilal/iToDo/raw/master/iToDo/Images/img5.png" height="295" width="161">&nbsp;&nbsp;
+<img src="https://github.com/ArslanBilal/iToDo/raw/master/iToDo/Images/img6.png" height="295" width="161">&nbsp;&nbsp;
+<img src="https://github.com/ArslanBilal/iToDo/raw/master/iToDo/Images/img7.png" height="295" width="161">&nbsp;&nbsp;
+<img src="https://github.com/ArslanBilal/iToDo/raw/master/iToDo/Images/img8.png" height="295" width="161"><br>
 <hr>
 =======
