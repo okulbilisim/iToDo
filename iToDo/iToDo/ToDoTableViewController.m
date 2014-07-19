@@ -83,8 +83,6 @@
 }
 
 #pragma mark - Table view data source
-
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
@@ -149,8 +147,10 @@
         
         // Execute the query.
         [self.dbManager executeQuery:query];
-        
-        // Reload the table view.
+    NSLog(@"---------------------------------------------------------------------------------------------");
+        NSLog(@"Query was executed succesfully. Affected rows = %d", self.dbManager.affectedRows);
+        NSLog(@"Deleted Todo Name: %@", [[self.arrTodosInfo objectAtIndex:indexPath.row] objectAtIndex:1]);
+        NSLog(@"-----------------------------------------------------------------------------------------");        // Reload the table view.
         [self loadData];
     }
 }
