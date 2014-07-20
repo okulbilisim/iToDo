@@ -19,14 +19,15 @@ It's just like that. Very simple to use your project.
 <hr>
 <h5>Screenshots of App</h5>
 <hr>
-<img src="https://github.com/ArslanBilal/iToDo/raw/master/iToDo/Images/img1.png" height="295" width="161">&nbsp;&nbsp;
-<img src="https://github.com/ArslanBilal/iToDo/raw/master/iToDo/Images/img2.png" height="295" width="161">&nbsp;&nbsp;
-<img src="https://github.com/ArslanBilal/iToDo/raw/master/iToDo/Images/img3.png" height="295" width="161">&nbsp;&nbsp;
-<img src="https://github.com/ArslanBilal/iToDo/raw/master/iToDo/Images/img4.png" height="295" width="161"><br>
+<img src="https://github.com/ArslanBilal/iToDo/raw/master/iToDo/Images/img1.png" width="214">&nbsp;&nbsp;
+<img src="https://github.com/ArslanBilal/iToDo/raw/master/iToDo/Images/img2.png" width="214">&nbsp;&nbsp;
+<img src="https://github.com/ArslanBilal/iToDo/raw/master/iToDo/Images/img3.png" width="214"><br>
 <hr>
-<img src="https://github.com/ArslanBilal/iToDo/raw/master/iToDo/Images/img5.png" height="295" width="161">&nbsp;&nbsp;
-<img src="https://github.com/ArslanBilal/iToDo/raw/master/iToDo/Images/img6.png" height="295" width="161">&nbsp;&nbsp;
-<img src="https://github.com/ArslanBilal/iToDo/raw/master/iToDo/Images/img7.png" height="295" width="161">&nbsp;&nbsp;
-<img src="https://github.com/ArslanBilal/iToDo/raw/master/iToDo/Images/img8.png" height="295" width="161"><br>
+<img src="https://github.com/ArslanBilal/iToDo/raw/master/iToDo/Images/img4.png" width="214">&nbsp;&nbsp;
+<img src="https://github.com/ArslanBilal/iToDo/raw/master/iToDo/Images/img5.png" width="214">&nbsp;&nbsp;
+<img src="https://github.com/ArslanBilal/iToDo/raw/master/iToDo/Images/img6.png" width="214"><br>
+<hr>
+<img src="https://github.com/ArslanBilal/iToDo/raw/master/iToDo/Images/img7.png" width="214">&nbsp;&nbsp;
+<img src="https://github.com/ArslanBilal/iToDo/raw/master/iToDo/Images/img8.png" width="214">
 <hr>
 =======
