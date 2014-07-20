@@ -71,8 +71,22 @@
     }
     self.arrTodosInfo = [[NSArray alloc] initWithArray:[self.dbManager loadDataFromDBWithQuery:query]];
     
-    //  Reload the table view.
-    [self.tableView reloadData];
+    if (self.arrTodosInfo != nil)
+    {
+        //  Reload the table view.
+        NSLog(@"-----------------------------------------------------------------------------------------");
+        NSLog(@"Query was executed succesfully. Data is loaded the Array.");
+        NSLog(@"-----------------------------------------------------------------------------------------");
+        [self.tableView reloadData];
+    }
+    else
+    {
+        NSLog(@"-----------------------------------------------------------------------------------------");
+        NSLog(@"Query was executed unsuccesfully. Data is  not loaded the Array.");
+        NSLog(@"-----------------------------------------------------------------------------------------");
+    }
+    
+
 }
 
 #pragma mark - AddToDoViewC Delegate Method
@@ -147,11 +161,22 @@
         
         // Execute the query.
         [self.dbManager executeQuery:query];
-    NSLog(@"---------------------------------------------------------------------------------------------");
-        NSLog(@"Query was executed succesfully. Affected rows = %d", self.dbManager.affectedRows);
-        NSLog(@"Deleted Todo Name: %@", [[self.arrTodosInfo objectAtIndex:indexPath.row] objectAtIndex:1]);
-        NSLog(@"-----------------------------------------------------------------------------------------");        // Reload the table view.
-        [self loadData];
+        if (self.dbManager.affectedRows != 0)
+        {
+            NSLog(@"-----------------------------------------------------------------------------------------");
+            NSLog(@"Query was executed succesfully. Affected rows = %d", self.dbManager.affectedRows);
+            NSLog(@"Deleted Todo Name: %@", [[self.arrTodosInfo objectAtIndex:indexPath.row] objectAtIndex:1]);
+            NSLog(@"-----------------------------------------------------------------------------------------");
+            
+            // Reload the table view.
+            [self loadData];
+        }
+        else
+        {
+            NSLog(@"-----------------------------------------------------------------------------------------");
+            NSLog(@"Query was executed unsuccesfully.");
+            NSLog(@"-----------------------------------------------------------------------------------------");
+        }
     }
 }
 
