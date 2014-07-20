@@ -17,6 +17,8 @@ It's just like that. Very simple to use your project.
 
 
 <hr>
+<h5>Screenshots of App</h5>
+<hr>
 <img src="https://github.com/ArslanBilal/iToDo/raw/master/iToDo/Images/img1.png" height="295" width="161">&nbsp;&nbsp;
 <img src="https://github.com/ArslanBilal/iToDo/raw/master/iToDo/Images/img2.png" height="295" width="161">&nbsp;&nbsp;
 <img src="https://github.com/ArslanBilal/iToDo/raw/master/iToDo/Images/img3.png" height="295" width="161">&nbsp;&nbsp;
