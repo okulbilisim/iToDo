@@ -34,6 +34,18 @@
     //  Initialize the dbManager property with Database name.
     self.dbManager = [[DBManager alloc] initWithDatabaseFileName:@"iToDoDb.sql"];
     [self loadData];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    
+    [self.view addGestureRecognizer:tap];
+}
+
+- (void) dismissKeyboard
+{
+    // add self
+    [self.todoSearchBar resignFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning
@@ -50,6 +62,7 @@
     [self performSegueWithIdentifier:@"idSegue" sender:self];
     
 }
+
 
 #pragma mark - Segue for reload data
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -220,6 +233,17 @@
     }
     
     [self.tableView reloadData];
+}
+
+-(BOOL)searchBar:(UISearchBar *)searchBar shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{    NSRange resultRange = [text rangeOfCharacterFromSet:[NSCharacterSet newlineCharacterSet] options:NSBackwardsSearch];
+    
+    if ([text length] == 1 && resultRange.location != NSNotFound) {
+        [searchBar resignFirstResponder];
+        return NO;
+    }
+    return YES;
+    
 }
 
 @end
