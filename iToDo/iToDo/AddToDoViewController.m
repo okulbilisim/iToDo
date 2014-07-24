@@ -27,7 +27,8 @@
     self.dbManager = [[DBManager alloc] initWithDatabaseFileName:@"iToDoDb.sql"];
     
     //  Check if should load specific to edit.
-    if (self.self.recordIDToEdit != -1) {
+    if (self.self.recordIDToEdit != -1)
+    {
         [self loadInfoToView];
     }
 }
@@ -78,6 +79,8 @@
 - (IBAction)SaveToDo:(id)sender
 {
     //  Dismissing Keyboard
+    bool typeOfQuery = NO;
+    
     [self.txtDesc resignFirstResponder];
     [self.txtTitle resignFirstResponder];
     
@@ -96,6 +99,7 @@
     {
         query = [NSString stringWithFormat:@"insert into todoInfo values(null, '%@', '%@')", self.txtTitle.text, self.txtDesc.text];
         NSLog(@"The query is: %@", query);
+        typeOfQuery = YES;
     }
     else
     {
@@ -111,10 +115,21 @@
     //  If query was succesfully executed then pop the view controller.
     if (self.dbManager.affectedRows != 0)
     {
-    NSLog(@"-----------------------------------------------------------------------------------------");
-        NSLog(@"Query was executed succesfully. Affected rows = %d", self.dbManager.affectedRows);
-        NSLog(@"Added Todo Name: %@", self.txtTitle.text);
-    NSLog(@"-----------------------------------------------------------------------------------------");
+        
+        if(typeOfQuery)
+        {
+            NSLog(@"-----------------------------------------------------------------------------------------");
+            NSLog(@"Query was executed succesfully. Affected rows = %d", self.dbManager.affectedRows);
+            NSLog(@"Added Todo Name: %@", self.txtTitle.text);
+            NSLog(@"-----------------------------------------------------------------------------------------");
+        }
+        else
+        {
+            NSLog(@"-----------------------------------------------------------------------------------------");
+            NSLog(@"Query was executed succesfully. Affected rows = %d", self.dbManager.affectedRows);
+            NSLog(@"Updated Todo Name: %@", self.txtTitle.text);
+            NSLog(@"-----------------------------------------------------------------------------------------");
+        }
         
         //  Inform the delegate that editing was finished.
         [self.delegate editingInfoWasFinished];
