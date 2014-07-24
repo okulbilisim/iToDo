@@ -16,6 +16,7 @@
 @property (nonatomic, strong) NSMutableArray *arrSearchTodosInfo;
 @property (nonatomic) int recordIDToEdit;
 @property BOOL isFiltered;
+@property NSString *titleOfDetailPage;
 
 -(void) loadData;
 
@@ -37,13 +38,6 @@
     //  Initialize the dbManager property with Database name.
     self.dbManager = [[DBManager alloc] initWithDatabaseFileName:@"iToDoDb.sql"];
     [self loadData];
-    
-    //  Search keyboard dissmis gesture.
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
-                                   initWithTarget:self
-                                   action:@selector(dismissKeyboard)];
-    
-    [self.view addGestureRecognizer:tap];
 }
 
 - (void) dismissKeyboard
@@ -62,6 +56,7 @@
 {
     // Before performing the segue, set the -1 value to the recordIDToEdit. That way we'll indicate that we want to add a new record and not to edit an existing one.
     self.recordIDToEdit = -1;
+    self.titleOfDetailPage = @"Save";
     
     [self performSegueWithIdentifier:@"idSegue" sender:self];
     
@@ -74,6 +69,7 @@
     AddToDoViewController *addToDoVC = [segue destinationViewController];
     addToDoVC.delegate = self;
     addToDoVC.recordIDToEdit = self.recordIDToEdit;
+    addToDoVC.editButton.title = self.titleOfDetailPage;
 }
 
 #pragma mark - Load data from DataBase
@@ -164,10 +160,19 @@
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView willBeginEditingRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    self.navigationItem.title = @"Delete iToDo";
+}
+
+-(void)tableView:(UITableView *)tableView didEndEditingRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    self.navigationItem.title = @"iToDo's";
+}
 // When delete a row on the list. Also delete from database.
 -(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    self.navigationItem.title = @"iToDo's";
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the selected record.
         // Find the record ID.
@@ -197,10 +202,11 @@
     }
 }
 
--(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //  Get the record ID of the selected name and set it to the recordIDToEdit.
     self.recordIDToEdit = [[[self.arrTodosInfo objectAtIndex:indexPath.row] objectAtIndex:0] intValue];
+    self.titleOfDetailPage = @"Edit";
     
     //Perform the Segue
     [self performSegueWithIdentifier:@"idSegue" sender:self];
@@ -250,4 +256,8 @@
     
 }
 
+-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    [self dismissKeyboard];
+}
 @end
