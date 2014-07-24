@@ -22,5 +22,6 @@
 @property (nonatomic) int recordIDToEdit;
 
 - (IBAction)SaveToDo:(id)sender;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *editButton;
 
 @end
