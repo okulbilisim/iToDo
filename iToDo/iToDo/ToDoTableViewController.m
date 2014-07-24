@@ -27,6 +27,9 @@
 {
     [super viewDidLoad];
     self.isFiltered = NO;
+
+    //  Tint color of back bar button.
+    [self.navigationController.navigationBar setTintColor:[UIColor colorWithRed:(232.0 / 255.0) green:(166.0 / 255.0) blue:(105.0 / 255.0) alpha:1.0f]];
     
     //  Bacground color with my best color :)
     self.view.backgroundColor = [UIColor colorWithRed:(232.0 / 255.0) green:(166.0 / 255.0) blue:(105.0 / 255.0) alpha:1.0f];
@@ -35,6 +38,7 @@
     self.dbManager = [[DBManager alloc] initWithDatabaseFileName:@"iToDoDb.sql"];
     [self loadData];
     
+    //  Search keyboard dissmis gesture.
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
                                    initWithTarget:self
                                    action:@selector(dismissKeyboard)];
