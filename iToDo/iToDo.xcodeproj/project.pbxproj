@@ -25,6 +25,10 @@
 		778FA9111968219A008B3664 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 778FA90F1968219A008B3664 /* InfoPlist.strings */; };
 		778FA9131968219A008B3664 /* iToDoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 778FA9121968219A008B3664 /* iToDoTests.m */; };
 		778FA91E196822F3008B3664 /* ToDoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 778FA91D196822F3008B3664 /* ToDoTableViewController.m */; };
+		77CF0AC519825F74002B6410 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77CF0AC419825F74002B6410 /* SWRevealViewController.m */; };
+		77CF0AC8198260D5002B6410 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 77CF0AC7198260D5002B6410 /* menu.png */; };
+		77CF0ACE198271E0002B6410 /* SideBarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77CF0ACD198271E0002B6410 /* SideBarTableViewController.m */; };
+		77CF0AD2198276EB002B6410 /* todos.png in Resources */ = {isa = PBXBuildFile; fileRef = 77CF0AD1198276EB002B6410 /* todos.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +67,12 @@
 		778FA9121968219A008B3664 /* iToDoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iToDoTests.m; sourceTree = "<group>"; };
 		778FA91C196822F3008B3664 /* ToDoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoTableViewController.h; sourceTree = "<group>"; };
 		778FA91D196822F3008B3664 /* ToDoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoTableViewController.m; sourceTree = "<group>"; };
+		77CF0AC319825F74002B6410 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		77CF0AC419825F74002B6410 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		77CF0AC7198260D5002B6410 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
+		77CF0ACC198271E0002B6410 /* SideBarTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideBarTableViewController.h; sourceTree = "<group>"; };
+		77CF0ACD198271E0002B6410 /* SideBarTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideBarTableViewController.m; sourceTree = "<group>"; };
+		77CF0AD1198276EB002B6410 /* todos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = todos.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,8 +149,12 @@
 				778FA91D196822F3008B3664 /* ToDoTableViewController.m */,
 				770B8EC1196AD539008207B5 /* AddToDoViewController.h */,
 				770B8EC2196AD539008207B5 /* AddToDoViewController.m */,
+				77CF0ACC198271E0002B6410 /* SideBarTableViewController.h */,
+				77CF0ACD198271E0002B6410 /* SideBarTableViewController.m */,
 				778FA8FF1968219A008B3664 /* Images.xcassets */,
+				77CF0AC6198260CB002B6410 /* Images */,
 				770B8EBB196AD061008207B5 /* DataBase */,
+				77CF0AC219825F66002B6410 /* Library */,
 				778FA8EE1968219A008B3664 /* Supporting Files */,
 			);
 			path = iToDo;
@@ -175,6 +189,24 @@
 				778FA90F1968219A008B3664 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		77CF0AC219825F66002B6410 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				77CF0AC319825F74002B6410 /* SWRevealViewController.h */,
+				77CF0AC419825F74002B6410 /* SWRevealViewController.m */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		77CF0AC6198260CB002B6410 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				77CF0AC7198260D5002B6410 /* menu.png */,
+				77CF0AD1198276EB002B6410 /* todos.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,9 +287,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				778FA9001968219A008B3664 /* Images.xcassets in Resources */,
+				77CF0AC8198260D5002B6410 /* menu.png in Resources */,
 				778FA8F21968219A008B3664 /* InfoPlist.strings in Resources */,
 				773DDAFF196B26B7005F402A /* iToDoDb.sql in Resources */,
 				778FA8FB1968219A008B3664 /* Main.storyboard in Resources */,
+				77CF0AD2198276EB002B6410 /* todos.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,11 +310,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77CF0ACE198271E0002B6410 /* SideBarTableViewController.m in Sources */,
 				778FA91E196822F3008B3664 /* ToDoTableViewController.m in Sources */,
 				778FA8F81968219A008B3664 /* ToDoAppDelegate.m in Sources */,
 				778FA8F41968219A008B3664 /* main.m in Sources */,
 				770B8EBE196AD076008207B5 /* DBManager.m in Sources */,
 				770B8EC3196AD539008207B5 /* AddToDoViewController.m in Sources */,
+				77CF0AC519825F74002B6410 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

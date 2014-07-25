@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6185.11" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ZE0-Pf-Ols">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="bQz-gG-LSW">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6190.4"/>
+        <deployment defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--iToDo's-->
+        <!--To Do Table View Controller - iToDo's-->
         <scene sceneID="FOr-ct-Jdb">
             <objects>
                 <tableViewController id="e4X-OZ-0cq" customClass="ToDoTableViewController" sceneMemberID="viewController">
@@ -26,7 +26,7 @@
                                 <rect key="frame" x="0.0" y="130" width="320" height="85"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ly7-Aq-nWq" id="rCf-TW-bTT">
-                                    <rect key="frame" x="0.0" y="0.0" width="253" height="84"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="84"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mHm-Gx-Moh">
@@ -53,6 +53,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="iToDo's" id="X2F-P1-Wab">
+                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="hfA-Dd-KIk"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="CXC-pv-fCU">
                             <color key="tintColor" red="0.90836256380000002" green="0.6494116379" blue="0.41180104989999999" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -61,13 +62,97 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="sideBarButton" destination="hfA-Dd-KIk" id="VpF-tY-dOJ"/>
                         <outlet property="todoSearchBar" destination="xRX-5p-qAu" id="HDg-ak-noh"/>
                         <segue destination="ecN-1t-Lxc" kind="push" identifier="idSegue" id="Odn-fs-06A"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7hD-27-Q29" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="135" y="-63"/>
+            <point key="canvasLocation" x="-945" y="-735"/>
+        </scene>
+        <!--Reveal View Controller-->
+        <scene sceneID="YYX-az-QtQ">
+            <objects>
+                <viewController id="bQz-gG-LSW" customClass="SWRevealViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aTT-wt-t66"/>
+                        <viewControllerLayoutGuide type="bottom" id="Day-PW-nDd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1bO-yp-eVi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="kpg-Rh-5xI" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegue" id="wDw-Rv-E9b"/>
+                        <segue destination="ZE0-Pf-Ols" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegue" id="lfj-Lo-hg4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="byy-ho-emb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1914" y="-1131"/>
+        </scene>
+        <!--Side Bar Table View Controller-->
+        <scene sceneID="bKc-YO-YQn">
+            <objects>
+                <tableViewController id="kpg-Rh-5xI" customClass="SideBarTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="BPj-g7-Qgv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="title" rowHeight="90" id="MdK-VZ-Yzv">
+                                <rect key="frame" x="0.0" y="22" width="320" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MdK-VZ-Yzv" id="T9e-Bb-pjb">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="iToDo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="li3-Tt-ogZ">
+                                            <rect key="frame" x="73" y="13" width="174" height="64"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="38"/>
+                                            <color key="textColor" red="0.90836256380000002" green="0.6494116379" blue="0.41180104989999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="0.90836256380000002" green="0.6494116379" blue="0.41180104989999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="todos" id="nJN-sD-tR0">
+                                <rect key="frame" x="0.0" y="112" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nJN-sD-tR0" id="NSs-dA-Tfw">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="todos.png" translatesAutoresizingMaskIntoConstraints="NO" id="QwO-5g-qdh">
+                                            <rect key="frame" x="20" y="3" width="38" height="38"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="iToDos" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WAz-Cd-Sr2">
+                                            <rect key="frame" x="66" y="7" width="100" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" red="0.90836256380000002" green="0.6494116379" blue="0.41180104989999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="ZE0-Pf-Ols" kind="custom" identifier="" customClass="SWRevealViewControllerSegueSetController" id="Z77-Ob-UTG"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="kpg-Rh-5xI" id="nrH-hY-dNJ"/>
+                            <outlet property="delegate" destination="kpg-Rh-5xI" id="v0J-yq-sTj"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hf4-4b-TqQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1417" y="-1421"/>
         </scene>
         <!--Add To Do View Controller-->
         <scene sceneID="rll-Cm-bDS">
@@ -122,7 +207,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ipN-yl-DvL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="567" y="-63"/>
+            <point key="canvasLocation" x="-513" y="-735"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TZE-Ih-Ftf">
@@ -137,15 +222,19 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pN6-Bd-0WS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-315" y="-63"/>
+            <point key="canvasLocation" x="-1411" y="-735"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="menu.png" width="28" height="20"/>
+        <image name="todos.png" width="76" height="76"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4">
-            <size key="portraitSize" width="320" height="568"/>
-            <size key="landscapeSize" width="568" height="320"/>
-        </simulatedScreenMetrics>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="Z77-Ob-UTG"/>
+    </inferredMetricsTieBreakers>
 </document>
