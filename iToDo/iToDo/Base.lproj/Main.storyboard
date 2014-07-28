@@ -139,6 +139,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="ZE0-Pf-Ols" kind="custom" identifier="showFront" customClass="SWRevealViewControllerSeguePushController" id="6F4-WL-Qfp"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -231,4 +234,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="6F4-WL-Qfp"/>
+    </inferredMetricsTieBreakers>
 </document>
