@@ -29,6 +29,7 @@
 		77CF0AC8198260D5002B6410 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 77CF0AC7198260D5002B6410 /* menu.png */; };
 		77CF0ACE198271E0002B6410 /* SideBarTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77CF0ACD198271E0002B6410 /* SideBarTableViewController.m */; };
 		77CF0AD2198276EB002B6410 /* todos.png in Resources */ = {isa = PBXBuildFile; fileRef = 77CF0AD1198276EB002B6410 /* todos.png */; };
+		77F72EC51986FC05004A1615 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 77F72EC41986FC05004A1615 /* settings.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		77CF0ACC198271E0002B6410 /* SideBarTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideBarTableViewController.h; sourceTree = "<group>"; };
 		77CF0ACD198271E0002B6410 /* SideBarTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideBarTableViewController.m; sourceTree = "<group>"; };
 		77CF0AD1198276EB002B6410 /* todos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = todos.png; sourceTree = "<group>"; };
+		77F72EC41986FC05004A1615 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +205,7 @@
 		77CF0AC6198260CB002B6410 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				77F72EC41986FC05004A1615 /* settings.png */,
 				77CF0AC7198260D5002B6410 /* menu.png */,
 				77CF0AD1198276EB002B6410 /* todos.png */,
 			);
@@ -287,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				778FA9001968219A008B3664 /* Images.xcassets in Resources */,
+				77F72EC51986FC05004A1615 /* settings.png in Resources */,
 				77CF0AC8198260D5002B6410 /* menu.png in Resources */,
 				778FA8F21968219A008B3664 /* InfoPlist.strings in Resources */,
 				773DDAFF196B26B7005F402A /* iToDoDb.sql in Resources */,

@@ -42,7 +42,7 @@
     self.tableView.backgroundColor = [UIColor colorWithWhite:0.2f alpha:1.0f];
     self.tableView.separatorColor = [UIColor colorWithWhite:0.3f alpha:0.2f];
     
-    _menuItems = @[@"title", @"todos"];
+    _menuItems = @[@"title", @"todos", @"settings"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -75,7 +75,14 @@
 
 -(BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return YES;
+    if (indexPath.row == 0)
+    {
+        return NO;
+    }
+    else
+    {
+        return YES;
+    }
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -88,21 +95,22 @@
     
     return 44;
 }
-
-//-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    if(indexPath.row > 0)
-//    {
-//        ToDoTableViewController *toDoVC = [[ToDoTableViewController alloc] init];
-//        [self presentViewController:toDoVC animated:YES completion:nil];
-//    }
-//}
-
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    if ( [segue isKindOfClass: [SWRevealViewControllerSegue class]] ) {
+        SWRevealViewControllerSegue *swSegue = (SWRevealViewControllerSegue*) segue;
+        
+        swSegue.performBlock = ^(SWRevealViewControllerSegue* rvc_segue, UIViewController* svc, UIViewController* dvc) {
+            
+            UINavigationController* navController = (UINavigationController*)self.revealViewController.frontViewController;
+            [navController setViewControllers: @[dvc] animated: NO ];
+            [self.revealViewController setFrontViewPosition: FrontViewPositionLeft animated: YES];
+        };
+        
+    }
     
 }
 
