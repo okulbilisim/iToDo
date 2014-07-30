@@ -10,6 +10,7 @@
 		770B8EBE196AD076008207B5 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 770B8EBD196AD076008207B5 /* DBManager.m */; };
 		770B8EC0196AD250008207B5 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 770B8EBF196AD250008207B5 /* libsqlite3.dylib */; };
 		770B8EC3196AD539008207B5 /* AddToDoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 770B8EC2196AD539008207B5 /* AddToDoViewController.m */; };
+		772AC5891989797200C6AC96 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 772AC5881989797200C6AC96 /* SettingsViewController.m */; };
 		773DDAFF196B26B7005F402A /* iToDoDb.sql in Resources */ = {isa = PBXBuildFile; fileRef = 773DDAFE196B26B7005F402A /* iToDoDb.sql */; };
 		778FA8E81968219A008B3664 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 778FA8E71968219A008B3664 /* Foundation.framework */; };
 		778FA8EA1968219A008B3664 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 778FA8E91968219A008B3664 /* CoreGraphics.framework */; };
@@ -48,6 +49,8 @@
 		770B8EBF196AD250008207B5 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		770B8EC1196AD539008207B5 /* AddToDoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddToDoViewController.h; sourceTree = "<group>"; };
 		770B8EC2196AD539008207B5 /* AddToDoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddToDoViewController.m; sourceTree = "<group>"; };
+		772AC5871989797200C6AC96 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		772AC5881989797200C6AC96 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		773DDAFE196B26B7005F402A /* iToDoDb.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = iToDoDb.sql; sourceTree = "<group>"; };
 		778FA8E41968219A008B3664 /* iToDo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iToDo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		778FA8E71968219A008B3664 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -153,6 +156,8 @@
 				770B8EC2196AD539008207B5 /* AddToDoViewController.m */,
 				77CF0ACC198271E0002B6410 /* SideBarTableViewController.h */,
 				77CF0ACD198271E0002B6410 /* SideBarTableViewController.m */,
+				772AC5871989797200C6AC96 /* SettingsViewController.h */,
+				772AC5881989797200C6AC96 /* SettingsViewController.m */,
 				778FA8FF1968219A008B3664 /* Images.xcassets */,
 				77CF0AC6198260CB002B6410 /* Images */,
 				770B8EBB196AD061008207B5 /* DataBase */,
@@ -317,6 +322,7 @@
 				77CF0ACE198271E0002B6410 /* SideBarTableViewController.m in Sources */,
 				778FA91E196822F3008B3664 /* ToDoTableViewController.m in Sources */,
 				778FA8F81968219A008B3664 /* ToDoAppDelegate.m in Sources */,
+				772AC5891989797200C6AC96 /* SettingsViewController.m in Sources */,
 				778FA8F41968219A008B3664 /* main.m in Sources */,
 				770B8EBE196AD076008207B5 /* DBManager.m in Sources */,
 				770B8EC3196AD539008207B5 /* AddToDoViewController.m in Sources */,
