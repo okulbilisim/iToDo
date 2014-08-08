@@ -7,6 +7,7 @@
 //
 
 #import "SettingsViewController.h"
+#import "SWRevealViewController.h"
 
 @interface SettingsViewController ()
 
@@ -28,6 +29,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationItem.title = @"Settings";
+    
+    self.view.backgroundColor = [UIColor colorWithRed:(232.0 / 255.0) green:(166.0 / 255.0) blue:(105.0 / 255.0) alpha:1.0f];
+    
+    
+    UIBarButtonItem *leftBarButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menu.png"] style:UIBarButtonItemStyleBordered target:self.revealViewController action:@selector(revealToggle:)];
+    
+     self.navigationItem.leftBarButtonItem = leftBarButton;
+    
+    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 
 }
 

@@ -44,8 +44,8 @@
     
     
     //  Initialize the dbManager property with Database name.
-        self.dbManager = [[DBManager alloc] initWithDatabaseFileName:@"iToDoDb.sql"];
-        [self loadData];
+    self.dbManager = [[DBManager alloc] initWithDatabaseFileName:@"iToDoDb.sql"];
+    [self loadData];
 
 }
 
