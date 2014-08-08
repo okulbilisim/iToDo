@@ -8,6 +8,7 @@
 
 #import "ToDoTableViewController.h"
 #import "DBManager.h"
+#import "SWRevealViewController.h"
 
 @interface ToDoTableViewController ()
 
@@ -35,9 +36,17 @@
     //  Bacground color with my best color :)
     self.view.backgroundColor = [UIColor colorWithRed:(232.0 / 255.0) green:(166.0 / 255.0) blue:(105.0 / 255.0) alpha:1.0f];
     
+    //_sideBarButton.tintColor = [UIColor colorWithWhite:0.96f alpha:0.2f];
+    _sideBarButton.target = self.revealViewController;
+    _sideBarButton.action= @selector(revealToggle:);
+    
+    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    
+    
     //  Initialize the dbManager property with Database name.
     self.dbManager = [[DBManager alloc] initWithDatabaseFileName:@"iToDoDb.sql"];
     [self loadData];
+
 }
 
 - (void) dismissKeyboard

@@ -13,6 +13,7 @@
 <AddToDoViewControllerDelegate,UISearchBarDelegate>
 
 @property (nonatomic) IBOutlet UISearchBar *todoSearchBar;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *sideBarButton;
 
 - (IBAction)addToDo:(id)sender;
 
